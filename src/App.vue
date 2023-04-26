@@ -12,6 +12,7 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="ViteJS + VueJS" />
+  <router-view></router-view>
 </template>
 
 <style scoped>
