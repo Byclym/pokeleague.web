@@ -5,12 +5,14 @@ export default class BotTrainer implements TrainerInterface {
     name: string;
     pokemons: Pokemon[];
   
-    constructor(name: string) {
+    constructor(name: string)
+    {
         this.name = name;
         this.pokemons = [];
     }
 
-    public addPokemon(pokemon: Pokemon): void {
+    public addPokemon(pokemon: Pokemon): void
+    {
         this.pokemons.push(pokemon);
     }
 }
