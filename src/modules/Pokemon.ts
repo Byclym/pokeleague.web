@@ -13,8 +13,9 @@ export default class Pokemon {
     defense: number;
     specialDefense: number;
     speed: number;
+    level: number;
   
-    constructor(pokemon: PokemonData)
+    constructor(pokemon: PokemonData, level: number)
     {
         this.id = pokemon.id;
         this.name = pokemon.name;
@@ -26,16 +27,17 @@ export default class Pokemon {
         this.defense = pokemon.defense;
         this.specialDefense = pokemon.specialDefense;
         this.speed = pokemon.speed;
+        this.level = level;
     }
 
     public getInitialScore(): number
     {
-        return this.hitpoints
+        return (this.hitpoints
             + this.attack
             + this.specialAttack
             + this.defense
             + this.specialDefense
-            + this.speed;
+            + this.speed) * (this.level / 10);
     }
 
     public getScoreAgainstPokemon(opponent: Pokemon): number

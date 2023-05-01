@@ -9,12 +9,12 @@
     export default {
         data() {
 
-            const bulbasaur = new Pokemon(getPokemonById(1));
-            const charmander = new Pokemon(getPokemonById(4));
-            const squirtle = new Pokemon(getPokemonById(7));
+            const bulbasaur = new Pokemon(getPokemonById(1), 10);
+            const charmander = new Pokemon(getPokemonById(4), 10);
+            const squirtle = new Pokemon(getPokemonById(7), 10);
 
-            const alolanSandslash = new Pokemon(getPokemonById(27.01));
-            const blaziken = new Pokemon(getPokemonById(257));
+            const alolanSandslash = new Pokemon(getPokemonById(27.01), 10);
+            const blaziken = new Pokemon(getPokemonById(257), 10);
 
             const player = new PlayerTrainer('Player');
             const bot = new BotTrainer('Bot');
@@ -36,7 +36,7 @@
             }
         },
         methods: {
-            selectPokemon(pokemon) {
+            selectPokemon(pokemon: Pokemon) {
                 if(this.combat.selectedPokemonPlayer != null) return
                 if(this.combat.action != 'selecting') return
                 this.combat.playerSelectPokemon(pokemon)
