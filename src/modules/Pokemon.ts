@@ -1,3 +1,4 @@
+import PokemonType from "./PokemonType";
 import { PokemonData } from "./PokemonList";
 import { getTypeEffectiveness } from './manager/TypeManager'
 
@@ -23,8 +24,9 @@ export default class Pokemon {
 
     public getScoreAgainstPokemon(opponent: Pokemon): number
     {
-        return this.getInitialScore() * getTypeEffectiveness(this.pokemon.type,opponent.pokemon.type);
+        return this.getInitialScore() * getTypeEffectiveness(this.getType(),opponent.getType());
     }
 
     public getName(): string { return this.pokemon.name }
+    public getType(): PokemonType[] { return this.pokemon.type }
 }

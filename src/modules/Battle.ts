@@ -62,7 +62,7 @@ export default class Battle {
     public playerSelectPokemon(pokemon: Pokemon): void
     {
         this.selectedPokemonPlayer = pokemon;
-        this.historical.push(this.player.name + ' lance ' + this.selectedPokemonPlayer.name);
+        this.historical.push(this.player.name + ' lance ' + this.selectedPokemonPlayer.getName());
         this.removePokemonFromPlayerTeam(pokemon);
         this.action = 'waiting';
     }
@@ -84,7 +84,7 @@ export default class Battle {
             });
         }
         this.selectedPokemonOpponent = oPokemon;
-        this.historical.push(this.opponent.name + ' lance ' + this.selectedPokemonOpponent.name);
+        this.historical.push(this.opponent.name + ' lance ' + this.selectedPokemonOpponent.getName());
         if(oPokemon) (this.removePokemonFromBotTeam(oPokemon));
     }
 
@@ -118,10 +118,10 @@ export default class Battle {
         var iScorePokemonOpponent = this.selectedPokemonOpponent.getScoreAgainstPokemon(this.selectedPokemonPlayer)
 
         if (iScorePokemonPlayer > iScorePokemonOpponent) {
-            this.historical.push(this.selectedPokemonOpponent.name + ' est tombé au combat');
+            this.historical.push(this.selectedPokemonOpponent.getName() + ' est tombé au combat');
             this.selectedPokemonOpponent = null;
         } else if (iScorePokemonPlayer < iScorePokemonOpponent) {
-            this.historical.push(this.selectedPokemonPlayer.name + ' est tombé au combat');
+            this.historical.push(this.selectedPokemonPlayer.getName() + ' est tombé au combat');
             this.selectedPokemonPlayer = null;
         } else if (iScorePokemonPlayer == iScorePokemonOpponent) {
             this.historical.push('Les 2 Pokémon sont tombés au combat');
