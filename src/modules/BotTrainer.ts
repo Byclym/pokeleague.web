@@ -1,14 +1,15 @@
-import TrainerInterface from './interface/TrainerInterface'
+import TrainerInterface from './interface/TrainerInterface';
+import { TrainerData } from "./TrainerList";
 import Pokemon from './Pokemon';
 
 export default class BotTrainer implements TrainerInterface {
     name: string;
     pokemons: Pokemon[];
   
-    constructor(name: string)
+    constructor(trainer: TrainerData)
     {
-        this.name = name;
-        this.pokemons = [];
+        this.name = trainer.name;
+        this.pokemons = trainer.pokemons;
     }
 
     public addPokemon(pokemon: Pokemon): void

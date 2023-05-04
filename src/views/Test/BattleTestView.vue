@@ -3,6 +3,7 @@
     import PlayerTrainer from '../../modules/PlayerTrainer';
     import BotTrainer from '../../modules/BotTrainer';
     import { getPokemonById } from '../../modules/manager/PokemonManager';
+    import { getPlayerTrainerByName, getBotTrainerByName } from '../../modules/manager/TrainerManager';
     import Pokemon from '../../modules/Pokemon';
     import Battle from '../../modules/Battle';
 
@@ -13,18 +14,8 @@
             const charmander = new Pokemon(getPokemonById(4), 10);
             const squirtle = new Pokemon(getPokemonById(7), 10);
 
-            const alolanSandslash = new Pokemon(getPokemonById(27.01), 10);
-            const blaziken = new Pokemon(getPokemonById(257), 10);
-
-            const player = new PlayerTrainer('Player');
-            const bot = new BotTrainer('Bot');
-
-            player.addPokemon(bulbasaur);
-            player.addPokemon(charmander);
-            player.addPokemon(squirtle);
-            bot.addPokemon(bulbasaur);
-            bot.addPokemon(charmander);
-            bot.addPokemon(squirtle);
+            const player = new PlayerTrainer(getPlayerTrainerByName('Player'));
+            const bot = new BotTrainer(getBotTrainerByName('Brock'));
 
             const combat = new Battle(player, bot)
             combat.debut();

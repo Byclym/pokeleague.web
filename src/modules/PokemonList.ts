@@ -54,4 +54,28 @@ export const pokemonList = createPokemonArray(
         'specialDefense': 64,
         'speed': 43,
     },
+    {
+        'id': 74,
+        'name': 'Geodude',
+        'catchRate': 45,
+        'type': [PokemonType.Rock, PokemonType.Ground],
+        'hitpoints': 40,
+        'attack': 80,
+        'specialAttack': 100,
+        'defense': 30,
+        'specialDefense': 30,
+        'speed': 20,
+    },
+    {
+        'id': 95,
+        'name': 'Onix',
+        'catchRate': 45,
+        'type': [PokemonType.Rock, PokemonType.Ground],
+        'hitpoints': 35,
+        'attack': 45,
+        'specialAttack': 160,
+        'defense': 30,
+        'specialDefense': 45,
+        'speed': 70,
+    }
 )
