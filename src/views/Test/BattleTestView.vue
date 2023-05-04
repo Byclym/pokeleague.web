@@ -2,18 +2,12 @@
 
     import PlayerTrainer from '../../modules/PlayerTrainer';
     import BotTrainer from '../../modules/BotTrainer';
-    import { getPokemonById } from '../../modules/manager/PokemonManager';
     import { getPlayerTrainerByName, getBotTrainerByName } from '../../modules/manager/TrainerManager';
     import Pokemon from '../../modules/Pokemon';
     import Battle from '../../modules/Battle';
 
     export default {
         data() {
-
-            const bulbasaur = new Pokemon(getPokemonById(1), 10);
-            const charmander = new Pokemon(getPokemonById(4), 10);
-            const squirtle = new Pokemon(getPokemonById(7), 10);
-
             const player = new PlayerTrainer(getPlayerTrainerByName('Player'));
             const bot = new BotTrainer(getBotTrainerByName('Brock'));
 
