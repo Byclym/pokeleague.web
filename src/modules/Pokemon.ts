@@ -1,6 +1,8 @@
 import PokemonType from "./PokemonType";
 import { PokemonData } from "./PokemonList";
 import { getTypeEffectiveness } from './manager/TypeManager'
+import { EvolutionData } from "./Evolution";
+import { evolveManager } from "./manager/EvolutionManager";
 
 export default class Pokemon {
     pokemon: PokemonData
@@ -27,6 +29,12 @@ export default class Pokemon {
         return this.getInitialScore() * getTypeEffectiveness(this.getType(),opponent.getType());
     }
 
+    public evolve(evolution: EvolutionData) {
+        evolveManager(this, evolution);
+    }
+
     public getName(): string { return this.pokemon.name }
     public getType(): PokemonType[] { return this.pokemon.type }
+    public canEvolve(): boolean { return this.pokemon.evolutions? true: false }
+
 }

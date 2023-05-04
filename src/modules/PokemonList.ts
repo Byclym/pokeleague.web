@@ -1,3 +1,4 @@
+import { EvolutionData, EvolutionType } from './Evolution';
 import PokemonType from './PokemonType';
 
 function createPokemonArray<T extends readonly PokemonData[] & Array<{ name: V }>, V extends string>(...args: T) {
@@ -15,6 +16,7 @@ export type PokemonData = {
     defense: number;
     specialDefense: number;
     speed: number;
+    evolutions?: EvolutionData[];
 }
 
 export const pokemonList = createPokemonArray(
@@ -29,6 +31,44 @@ export const pokemonList = createPokemonArray(
         'defense': 49,
         'specialDefense': 65,
         'speed': 45,
+        'evolutions': [
+            {
+                type: EvolutionType.LevelEvolution,
+                pokemonName: 'Ivysaur',
+                conditions: [16]
+            }
+        ],
+    },
+    {
+        'id': 2,
+        'name': 'Ivysaur',
+        'catchRate': 45,
+        'type': [PokemonType.Grass, PokemonType.Poison],
+        'hitpoints': 60,
+        'attack': 62,
+        'specialAttack': 63,
+        'defense': 80,
+        'specialDefense': 80,
+        'speed': 60,
+        'evolutions': [
+            {
+                type: EvolutionType.LevelEvolution,
+                pokemonName: 'Venusaur',
+                conditions: [32]
+            }
+        ],
+    },
+    {
+        'id': 3,
+        'name': 'Venusaur',
+        'catchRate': 45,
+        'type': [PokemonType.Grass, PokemonType.Poison],
+        'hitpoints': 80,
+        'attack': 82,
+        'specialAttack': 83,
+        'defense': 100,
+        'specialDefense': 100,
+        'speed': 80,
     },
     {
         'id': 4,
