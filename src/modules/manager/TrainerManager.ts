@@ -12,7 +12,7 @@ export function getPlayerTrainerByName(name: string): PlayerTrainer {
         };
         return trainerData;
     }
-    throw new Error('TrainerManager - Method getPokemonById - Aucun résultat retourné');
+    throw new Error('TrainerManager - Method getPlayerTrainerByName - Aucun résultat retourné pour '+name );
 }
 
 export function getBotTrainerByName(name: string): BotTrainer {
@@ -25,5 +25,5 @@ export function getBotTrainerByName(name: string): BotTrainer {
         };
         return trainerData;
     }
-    throw new Error('TrainerManager - Method getPokemonById - Aucun résultat retourné');
+    throw new Error('TrainerManager - Method getBotTrainerByName - Aucun résultat retourné pour '+name);
 }

@@ -1,5 +1,3 @@
-import PokemonType from "./PokemonType";
-
 export enum EvolutionType {
     'LevelEvolution',
     'ItemEvolution'
