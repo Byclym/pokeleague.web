@@ -1,5 +1,5 @@
 import TrainerInterface from './interface/TrainerInterface';
-import { TrainerData } from "./TrainerList";
+import { PlayerTrainerData } from "./TrainerList";
 import Pokemon from './Pokemon';
 import { PlayerTrainerType } from './TrainerType';
 
@@ -8,7 +8,7 @@ export default class PlayerTrainer implements TrainerInterface {
     pokemons: Pokemon[];
     type: PlayerTrainerType[];
   
-    constructor(trainer: TrainerData)
+    constructor(trainer: PlayerTrainerData)
     {
         this.name = trainer.name;
         this.pokemons = trainer.pokemons;

@@ -1,19 +1,29 @@
 import Pokemon from "./Pokemon";
 import PokemonType from "./PokemonType";
 import { PlayerTrainerType } from "./TrainerType";
-import { getPokemonById } from './manager/PokemonManager';
+import { getPokemonById, getPokemonByName } from './manager/PokemonManager';
 
-function createChampionArray<T extends readonly TrainerData[] & Array<{ name: V }>, V extends string>(...args: T) {
+function createPlayerTrainerArray<T extends readonly PlayerTrainerData[] & Array<{ name: V }>, V extends string>(...args: T) {
     return args;
 }
 
-export type TrainerData = {
+function createBotTrainerArray<T extends readonly PlayerTrainerData[] & Array<{ name: V }>, V extends string>(...args: T) {
+    return args;
+}
+
+export type PlayerTrainerData = {
     name: string;
     type: PlayerTrainerType[];
     pokemons: Pokemon[];
 }
 
-export const PlayerTrainerList = createChampionArray(
+export type BotTrainerData = {
+    name: string;
+    type: PlayerTrainerType[];
+    pokemons: {};
+}
+
+export const PlayerTrainerList = createPlayerTrainerArray(
     {
         'id': 'player',
         'name': 'Player',
@@ -159,15 +169,34 @@ export const PlayerTrainerList = createChampionArray(
     },
 )
 
-export const BotTrainerList = createChampionArray(
+export const BotTrainerList = createBotTrainerArray(
     {
-        'id': 'brock',
-        'name': 'Brock',
-        'pokemonType': PokemonType.Rock,
+        'id': 'grunt',
+        'name': 'Grunt',
         'pokemons': [
-            new Pokemon(getPokemonById(74), 10),
-            new Pokemon(getPokemonById(74), 10),
-            new Pokemon(getPokemonById(95), 10)
+            {pokemon: getPokemonByName('Rattata'), levelMin: 0, levelMax: 30},
+            {pokemon: getPokemonByName('Raticate'), levelMin: 25, levelMax: 100},
+            {pokemon: getPokemonByName('Sandshrew'), levelMin: 0, levelMax: 32},
+            {pokemon: getPokemonByName('Sandslash'), levelMin: 27, levelMax: 100},
+            {pokemon: getPokemonByName('Zubat'), levelMin: 0, levelMax: 32},
+            {pokemon: getPokemonByName('Golbat'), levelMin: 27, levelMax: 100},
+            {pokemon: getPokemonByName('Ekans'), levelMin: 0, levelMax: 32},
+            {pokemon: getPokemonByName('Arbok'), levelMin: 27, levelMax: 100},
+            {pokemon: getPokemonByName('Venonat'), levelMin: 0, levelMax: 41},
+            {pokemon: getPokemonByName('Venomoth'), levelMin: 36, levelMax: 100},
+            {pokemon: getPokemonByName('Grimer'), levelMin: 20, levelMax: 48},
+            {pokemon: getPokemonByName('Muk'), levelMin: 43, levelMax: 100},
+            {pokemon: getPokemonByName('Koffing'), levelMin: 0, levelMax: 45},
+            {pokemon: getPokemonByName('Weezing'), levelMin: 40, levelMax: 100},
+            {pokemon: getPokemonByName('Drowzee'), levelMin: 15, levelMax: 36},
+            {pokemon: getPokemonByName('Hypno'), levelMin: 31, levelMax: 100},
+            {pokemon: getPokemonByName('Drowzee'), levelMin: 15, levelMax: 38},
+            {pokemon: getPokemonByName('Hypno'), levelMin: 33, levelMax: 100},
+            {pokemon: getPokemonByName('Cubone'), levelMin: 15, levelMax: 38},
+            {pokemon: getPokemonByName('Marowak'), levelMin: 33, levelMax: 100},
+            {pokemon: getPokemonByName('Machop'), levelMin: 15, levelMax: 38},
+            {pokemon: getPokemonByName('Machoke'), levelMin: 33, levelMax: 75},
+            {pokemon: getPokemonByName('Machamp'), levelMin: 40, levelMax: 100},
         ]
     }
 )
