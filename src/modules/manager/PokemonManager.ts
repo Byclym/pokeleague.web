@@ -15,6 +15,7 @@ export function getPokemonById(id: number): PokemonData {
             specialDefense: pokemon.specialDefense,
             speed: pokemon.speed,
             evolutions: pokemon.evolutions,
+            femaleRatio: pokemon.femaleRatio,
         };
         return pokemonData;
     }
@@ -36,8 +37,9 @@ export function getPokemonByName(name: string): PokemonData {
             specialDefense: pokemon.specialDefense,
             speed: pokemon.speed,
             evolutions: pokemon.evolutions,
+            femaleRatio: pokemon.femaleRatio,
         };
         return pokemonData;
     }
-    throw new Error('PokemonManager - Method getPokemonById - Aucun résultat retourné');
+    throw new Error('PokemonManager - Method getPokemonByName - Aucun résultat retourné pour '+ name);
 }
