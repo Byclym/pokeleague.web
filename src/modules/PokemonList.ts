@@ -494,7 +494,7 @@ export const pokemonList = createPokemonArray(
     },
     {
         'id': 28,
-        'name': 'Sandshrew',
+        'name': 'Sandslash',
         'catchRate': 90,
         'type': [PokemonType.Ground],
         'hitpoints': 75,
