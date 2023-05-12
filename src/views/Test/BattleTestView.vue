@@ -9,7 +9,7 @@
     export default {
         data() {
             const player = new PlayerTrainer(getPlayerTrainerByName('Player'));
-            const bot = new BotTrainer(getBotTrainerByName('Brock'));
+            const bot = new BotTrainer(getBotTrainerByName('Grunt'));
 
             const combat = new Battle(player, bot)
             combat.debut();
