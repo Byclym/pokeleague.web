@@ -1,7 +1,9 @@
+import BotTrainer from "./BotTrainer";
 import Pokemon from "./Pokemon";
 import PokemonType from "./PokemonType";
 import { PlayerTrainerType } from "./TrainerType";
-import { getPokemonById, getPokemonByName } from './manager/PokemonManager';
+import { getPokemonByName } from './manager/PokemonManager';
+import { getBotTrainerByName } from "./manager/TrainerManager";
 
 function createPlayerTrainerArray<T extends readonly PlayerTrainerData[] & Array<{ name: V }>, V extends string>(...args: T) {
     return args;
@@ -30,9 +32,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.Player,
         'pokemonType': null,
         'pokemons': [
-            new Pokemon(getPokemonById(1), 10),
-            new Pokemon(getPokemonById(4), 10),
-            new Pokemon(getPokemonById(7), 10)
+            new Pokemon(getPokemonByName('Bulbasaur'), 10),
+            new Pokemon(getPokemonByName('Charmander'), 10),
+            new Pokemon(getPokemonByName('Squirtle'), 10)
         ]
     },
     {
@@ -41,9 +43,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.Elite,
         'pokemonType': PokemonType.Dragon,
         'pokemons': [
-            new Pokemon(getPokemonById(147), 10),
-            new Pokemon(getPokemonById(147), 10),
-            new Pokemon(getPokemonById(142), 10)
+            new Pokemon(getPokemonByName('Dratini'), 10),
+            new Pokemon(getPokemonByName('Dratini'), 10),
+            new Pokemon(getPokemonByName('Aerodactyl'), 10)
         ]
     },
     {
@@ -52,9 +54,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.Elite,
         'pokemonType': PokemonType.Ghost,
         'pokemons': [
-            new Pokemon(getPokemonById(23), 10),
-            new Pokemon(getPokemonById(92), 10),
-            new Pokemon(getPokemonById(92), 10)
+            new Pokemon(getPokemonByName('Ekans'), 10),
+            new Pokemon(getPokemonByName('Gastly'), 10),
+            new Pokemon(getPokemonByName('Gastly'), 10)
         ]
     },
     {
@@ -63,9 +65,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.Elite,
         'pokemonType': PokemonType.Fighting,
         'pokemons': [
-            new Pokemon(getPokemonById(66), 10),
-            new Pokemon(getPokemonById(106), 10),
-            new Pokemon(getPokemonById(107), 10)
+            new Pokemon(getPokemonByName('Machop'), 10),
+            new Pokemon(getPokemonByName('Hitmonlee'), 10),
+            new Pokemon(getPokemonByName('Hitmonchan'), 10)
         ]
     },
     {
@@ -74,9 +76,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.Elite,
         'pokemonType': PokemonType.Ice,
         'pokemons': [
-            new Pokemon(getPokemonById(86), 10),
-            new Pokemon(getPokemonById(124), 10),
-            new Pokemon(getPokemonById(131), 10)
+            new Pokemon(getPokemonByName('Seel'), 10),
+            new Pokemon(getPokemonByName('Jynx'), 10),
+            new Pokemon(getPokemonByName('Lapras'), 10)
         ]
     },
     {
@@ -85,9 +87,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.GymLeader,
         'pokemonType': PokemonType.Ground,
         'pokemons': [
-            new Pokemon(getPokemonById(29), 10),
-            new Pokemon(getPokemonById(32), 10),
-            new Pokemon(getPokemonById(111), 10)
+            new Pokemon(getPokemonByName('Nidoran♀'), 10),
+            new Pokemon(getPokemonByName('Nidoran♂'), 10),
+            new Pokemon(getPokemonByName('Rhyhorn'), 10)
         ]
     },
     {
@@ -96,9 +98,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.GymLeader,
         'pokemonType': PokemonType.Fire,
         'pokemons': [
-            new Pokemon(getPokemonById(77), 10),
-            new Pokemon(getPokemonById(58), 10),
-            new Pokemon(getPokemonById(126), 10)
+            new Pokemon(getPokemonByName('Ponyta'), 10),
+            new Pokemon(getPokemonByName('Growlithe'), 10),
+            new Pokemon(getPokemonByName('Magmar'), 10)
         ]
     },
     {
@@ -107,9 +109,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.GymLeader,
         'pokemonType': PokemonType.Psychic,
         'pokemons': [
-            new Pokemon(getPokemonById(63), 10),
-            new Pokemon(getPokemonById(63), 10),
-            new Pokemon(getPokemonById(122), 10)
+            new Pokemon(getPokemonByName('Abra'), 10),
+            new Pokemon(getPokemonByName('Abra'), 10),
+            new Pokemon(getPokemonByName('Mr. Mime'), 10)
         ]
     },
     {
@@ -118,9 +120,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.GymLeader,
         'pokemonType': PokemonType.Psychic,
         'pokemons': [
-            new Pokemon(getPokemonById(48), 10),
-            new Pokemon(getPokemonById(88), 10),
-            new Pokemon(getPokemonById(109), 10)
+            new Pokemon(getPokemonByName('Venonat'), 10),
+            new Pokemon(getPokemonByName('Grimer'), 10),
+            new Pokemon(getPokemonByName('Koffing'), 10)
         ]
     },
     {
@@ -129,9 +131,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.GymLeader,
         'pokemonType': PokemonType.Grass,
         'pokemons': [
-            new Pokemon(getPokemonById(69), 10),
-            new Pokemon(getPokemonById(43), 10),
-            new Pokemon(getPokemonById(114), 10)
+            new Pokemon(getPokemonByName('Bellsprout'), 10),
+            new Pokemon(getPokemonByName('Oddish'), 10),
+            new Pokemon(getPokemonByName('Tangela'), 10)
         ]
     },
     {
@@ -140,9 +142,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.GymLeader,
         'pokemonType': PokemonType.Electric,
         'pokemons': [
-            new Pokemon(getPokemonById(25), 10),
-            new Pokemon(getPokemonById(26), 10),
-            new Pokemon(getPokemonById(81), 10)
+            new Pokemon(getPokemonByName('Pikachu'), 10),
+            new Pokemon(getPokemonByName('Raichu'), 10),
+            new Pokemon(getPokemonByName('Magnemite'), 10)
         ]
     },
     {
@@ -151,9 +153,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.GymLeader,
         'pokemonType': PokemonType.Water,
         'pokemons': [
-            new Pokemon(getPokemonById(116), 10),
-            new Pokemon(getPokemonById(118), 10),
-            new Pokemon(getPokemonById(120), 10)
+            new Pokemon(getPokemonByName('Horsea'), 10),
+            new Pokemon(getPokemonByName('Goldeen'), 10),
+            new Pokemon(getPokemonByName('Staryu'), 10)
         ]
     },
     {
@@ -162,9 +164,9 @@ export const PlayerTrainerList = createPlayerTrainerArray(
         'type': PlayerTrainerType.GymLeader,
         'pokemonType': PokemonType.Rock,
         'pokemons': [
-            new Pokemon(getPokemonById(74), 10),
-            new Pokemon(getPokemonById(74), 10),
-            new Pokemon(getPokemonById(95), 10)
+            new Pokemon(getPokemonByName('Geodude'), 10),
+            new Pokemon(getPokemonByName('Geodude'), 10),
+            new Pokemon(getPokemonByName('Onix'), 10)
         ]
     },
 )
@@ -198,5 +200,31 @@ export const BotTrainerList = createBotTrainerArray(
             {pokemon: getPokemonByName('Machoke'), levelMin: 33, levelMax: 75},
             {pokemon: getPokemonByName('Machamp'), levelMin: 40, levelMax: 100},
         ]
-    }
+    },
+    {
+        'id': 'rocker',
+        'name': 'Rocker',
+        'pokemons': [
+            {pokemon: getPokemonByName('Pikachu'), levelMin: 0, levelMax: 100},
+            {pokemon: getPokemonByName('Pikachu'), levelMin: 0, levelMax: 40},
+            {pokemon: getPokemonByName('Raichu'), levelMin: 40, levelMax: 100},
+            {pokemon: getPokemonByName('Magnemite'), levelMin: 0, levelMax: 100},
+            {pokemon: getPokemonByName('Magnemite'), levelMin: 0, levelMax: 40},
+            {pokemon: getPokemonByName('Magneton'), levelMin: 35, levelMax: 100},
+            {pokemon: getPokemonByName('Voltorb'), levelMin: 0, levelMax: 100},
+            {pokemon: getPokemonByName('Voltorb'), levelMin: 0, levelMax: 40},
+            {pokemon: getPokemonByName('Electrode'), levelMin: 35, levelMax: 100},
+            {pokemon: getPokemonByName('Electabuzz'), levelMin: 40, levelMax: 100},
+            {pokemon: getPokemonByName('Jolteon'), levelMin: 35, levelMax: 100},
+        ]
+    },
+
 )
+
+export function getRandomTrainer(): BotTrainer {
+    const trainerNames = Object.values(BotTrainerList).map((trainer) => trainer.name);
+    const randomIndex = Math.floor(Math.random() * trainerNames.length);
+    const sTrainerName = trainerNames[randomIndex];
+    const bot = getBotTrainerByName(sTrainerName);
+    return new BotTrainer(bot);
+}
