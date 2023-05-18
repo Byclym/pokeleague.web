@@ -996,7 +996,7 @@ export const pokemonList = createPokemonArray(
     },
     {
         'id': 58,
-        'name': 'Growlith',
+        'name': 'Growlithe',
         'catchRate': 190,
         'type': [PokemonType.Fire],
         'hitpoints': 55,
@@ -2039,7 +2039,7 @@ export const pokemonList = createPokemonArray(
     },
     {
         'id': 122,
-        'name': 'Mr.Mime',
+        'name': 'Mr. Mime',
         'catchRate': 45,
         'type': [PokemonType.Psychic],
         'hitpoints': 40,
