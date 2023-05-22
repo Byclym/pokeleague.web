@@ -1,6 +1,7 @@
 import BotTrainer from "@/modules/BotTrainer";
 import PlayerTrainer from "@/modules/PlayerTrainer";
 import Pokemon from "@/modules/Pokemon";
+import { parseJSON } from "jquery";
 
 export default class Battle {
 
@@ -12,6 +13,7 @@ export default class Battle {
     selectedPokemonPlayer: Pokemon | null = null;
     selectedPokemonOpponent: Pokemon | null = null;
     historical: string[];
+    ifWin: boolean | null = null;
 
     constructor(player: PlayerTrainer, opponent: BotTrainer)
     {
@@ -23,10 +25,17 @@ export default class Battle {
          */
         this.action = '';
         this.player = player;
-        this.teamPlayer = player.pokemons;
+        this.teamPlayer = [];
         this.opponent = opponent;
-        this.teamBot = opponent.pokemons;
+        this.teamBot = [];
         this.historical = [];
+
+        this.player.pokemons.forEach((pokemon) => {
+            this.teamPlayer.push(pokemon)
+        })
+        this.opponent.pokemons.forEach((pokemon) => {
+            this.teamBot.push(pokemon)
+        })
     }
 
     public debut(): void
@@ -136,10 +145,12 @@ export default class Battle {
     {
         if(this.teamPlayer.length == 0 && this.selectedPokemonPlayer == null)  {
             this.historical.push('Vous avez perdu');
-            this.action = 'finished'
+            this.ifWin = false;
+            this.action = 'finished';
         } else if (this.teamBot.length == 0 && this.selectedPokemonOpponent == null) {
             this.historical.push('Vous avez gagné');
-            this.action = 'finished'
+            this.ifWin = true;
+            this.action = 'finished';
         }
     }
 }
