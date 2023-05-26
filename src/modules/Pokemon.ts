@@ -2,7 +2,7 @@ import PokemonType from "./PokemonType";
 import { PokemonData } from "./PokemonList";
 import { getTypeEffectiveness } from './manager/TypeManager'
 import { EvolutionData } from "./Evolution";
-import { evolveManager } from "./manager/EvolutionManager";
+import { evolveManager, ifConditionEvolveManager } from "./manager/EvolutionManager";
 import Game from "./Game";
 
 export default class Pokemon {
@@ -30,12 +30,25 @@ export default class Pokemon {
         return this.getInitialScore() * getTypeEffectiveness(this.getType(),opponent.getType());
     }
 
-    public evolve(game: Game,evolution: EvolutionData) {
+    public evolve(game: Game,evolution: EvolutionData): void
+    {
         evolveManager(game, this, evolution);
+    }
+
+    public levelUp(): void
+    {
+        this.level++;
+    }
+    public getAvailableEvolve(game: Game): any
+    {
+        var availableEvolve = [];
+        this.pokemon.evolutions?.forEach((tmpEvolution) => {
+            if(ifConditionEvolveManager(game, this, tmpEvolution)) availableEvolve.push(tmpEvolution);
+        });
+        return availableEvolve;
     }
 
     public getName(): string { return this.pokemon.name }
     public getType(): PokemonType[] { return this.pokemon.type }
-    public canEvolve(): boolean { return this.pokemon.evolutions? true: false }
-
+    public canEvolve(game: Game,evolution: EvolutionData) { return ifConditionEvolveManager(game, this, evolution)}
 }

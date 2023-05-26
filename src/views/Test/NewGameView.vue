@@ -47,7 +47,6 @@ const childRef = ref()
         game.towns[6].gym = new PlayerTrainer(getPlayerTrainerByName("Blaine"));
         game.towns[7].gym = new PlayerTrainer(getPlayerTrainerByName("Giovanni"));
         game.nextDay();
-        console.log(game.challengers)
         return {
             game: game,
             ifCombat: false,
@@ -79,7 +78,6 @@ const childRef = ref()
         fight(level: number) {
           this.ifCombat = true;
           var bot = this.game.getChallengerByLevel(level);
-          console.log(bot)
           this.fighting.player = this.game.getOpponentChallenger(level);
           this.fighting.bot = bot.trainer;
           this.fighting.level = level;
@@ -91,8 +89,17 @@ const childRef = ref()
           let bot = this.game.getChallengerByLevel(this.fighting.level)
           bot.toFight = false;
           if(result) {
+            this.fighting.player.gainIP();
             bot.undefeated = false;
           }
+
+          this.fighting.level= null;
+          this.fighting.player= null;
+          this.fighting.bot= null;
+        },
+        levelUp(trainer: PlayerTrainer, pokemon: Pokemon) {
+          pokemon.levelUp();
+          trainer.loseIP();
         },
     },
     components: { BattleModal }
@@ -122,10 +129,13 @@ const childRef = ref()
 
               <div class="modal-body">
                 <slot name="body">
-                  {{ modal.city.gym.name}}
+                  {{ modal.city.gym.name}} {{ modal.city.gym.improvementPoint }} 
 
                     <div v-for="pokemon in modal.city.gym.pokemons" class="card shadow-sm">
-                        {{ pokemon.getName() }} (LVL. {{ pokemon.level }})
+                        {{ pokemon.getName() }} (LVL. {{ pokemon.level }}) <button v-if="modal.city.gym.improvementPoint > 0" class="modal-default-button" @click="levelUp(modal.city.gym, pokemon)">+</button>
+                        <div v-for="evolution in pokemon.getAvailableEvolve(game)">
+                          <button type="button" class="btn btn-primary" @click="pokemon.evolve(game, evolution)">Evolution</button>
+                        </div>
                     </div>
                 </slot>
               </div>
@@ -155,13 +165,13 @@ const childRef = ref()
 
               <div class="modal-body">
                 <slot name="body">
-                  {{ game.player.name}}
+                  {{ game.player.name}} {{ game.player.improvementPoint }}
                   <div v-for="pokemon in game.player.pokemons" class="card shadow-sm">
                     {{ pokemon.getName() }} (LVL. {{ pokemon.level }})
                   </div>
                 </slot>
                 <slot v-for="elite in modal.plateau.elite" name="body">
-                  {{ elite.name}}
+                  {{ elite.name }} {{ elite.improvementPoint }}
                     <div v-for="pokemon in elite.pokemons" class="card shadow-sm">
                         {{ pokemon.getName() }} (LVL. {{ pokemon.level }})
                     </div>
