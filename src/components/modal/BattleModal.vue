@@ -33,7 +33,6 @@ export default {
             this.$emit('consequencefight', this.combat.ifWin)
         },
         newBattle(player, bot) {
-            console.log('newBattle')
             this.player = player;
             this.bot = bot;
             this.combat = new Battle(this.player, this.bot);

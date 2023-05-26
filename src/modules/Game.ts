@@ -19,7 +19,7 @@ export default class Game {
     
     constructor(player: PlayerTrainer, plateau: Plateau, towns: Town[],)
     {
-        this.day= 1;
+        this.day= 0;
         this.player= player;
         this.bagpack= new Backpack();
         this.money= 1000;
@@ -28,7 +28,6 @@ export default class Game {
         this.plateau= plateau;
         this.towns= towns;
         this.challengers= [];
-        this.newChallenger();
     }
 
     public nextDay(): void
