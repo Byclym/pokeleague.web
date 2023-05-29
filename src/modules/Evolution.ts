@@ -6,5 +6,5 @@ export enum EvolutionType {
 export type EvolutionData = {
     type: EvolutionType, 
     pokemonName: string,
-    conditions: unknown[]
+    conditions: {}
 };

@@ -37,7 +37,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Ivysaur',
-                conditions: [16]
+                conditions: {
+                    level: 16
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -57,7 +59,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Venusaur',
-                conditions: [32]
+                conditions: {
+                    level: 32
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -90,7 +94,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Charmeleon',
-                conditions: [16]
+                conditions: {
+                    level: 16
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -110,7 +116,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Charizard',
-                conditions: [32]
+                conditions: {
+                    level: 32
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -142,8 +150,10 @@ export const pokemonList = createPokemonArray(
         'evolutions': [
             {
                 type: EvolutionType.LevelEvolution,
-                pokemonName: 'Charmeleon',
-                conditions: [16]
+                pokemonName: 'Wartortle',
+                conditions: {
+                    level: 16
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -163,7 +173,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Blastoise',
-                conditions: [32]
+                conditions: {
+                    level: 32
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -196,7 +208,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Metapod',
-                conditions: [7]
+                conditions: {
+                    level: 7
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -216,7 +230,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Butterfree',
-                conditions: [10]
+                conditions: {
+                    level: 10
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -249,7 +265,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Kakuna',
-                conditions: [7]
+                conditions: {
+                    level: 7
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -269,7 +287,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Beedrill',
-                conditions: [10]
+                conditions: {
+                    level: 10
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -302,7 +322,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Pidgeotto',
-                conditions: [18]
+                conditions: {
+                    level: 18
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -322,7 +344,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Pidgeot',
-                conditions: [36]
+                conditions: {
+                    level: 36
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -355,7 +379,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Raticate',
-                conditions: [20]
+                conditions: {
+                    level: 20
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -388,7 +414,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Fearow',
-                conditions: [20]
+                conditions: {
+                    level: 20
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -421,7 +449,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Arbok',
-                conditions: [22]
+                conditions: {
+                    level: 22
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -454,7 +484,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Raichu',
-                conditions: [ItemList.ThunderStone]
+                conditions: {
+                    item: ItemList.ThunderStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -487,7 +520,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Sandslash',
-                conditions: [22]
+                conditions: {
+                    level: 22
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -520,7 +555,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Nidorina',
-                conditions: [16]
+                conditions: {
+                    level: 16
+                }
             }
         ],
         'femaleRatio': 1,
@@ -540,7 +577,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Nidoqueen',
-                conditions: [ItemList.MoonStone]
+                conditions: {
+                    item: ItemList.MoonStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 1,
@@ -573,7 +613,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Nidorino',
-                conditions: [16]
+                conditions: {
+                    level: 16
+                }
             }
         ],
         'femaleRatio': 0,
@@ -593,7 +635,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Nodiking',
-                conditions: [ItemList.MoonStone]
+                conditions: {
+                    item: ItemList.MoonStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0,
@@ -626,7 +671,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Clefable',
-                conditions: [ItemList.MoonStone]
+                conditions: {
+                    item: ItemList.MoonStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.75,
@@ -659,7 +707,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Ninetales',
-                conditions: [ItemList.FireStone]
+                conditions: {
+                    item: ItemList.FireStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.75,
@@ -692,7 +743,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Wigglytuff',
-                conditions: [ItemList.MoonStone]
+                conditions: {
+                    item: ItemList.MoonStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.75,
@@ -725,7 +779,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Golbat',
-                conditions: [22]
+                conditions: {
+                    level: 22
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -758,7 +814,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Gloom',
-                conditions: [21]
+                conditions: {
+                    level: 21
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -778,7 +836,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Vileplume',
-                conditions: [ItemList.LeafStone]
+                conditions: {
+                    item: ItemList.LeafStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -811,7 +872,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Parasect',
-                conditions: [24]
+                conditions: {
+                    level: 24
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -844,7 +907,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Venomoth',
-                conditions: [31]
+                conditions: {
+                    level: 31
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -877,7 +942,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Dugtrio',
-                conditions: [26]
+                conditions: {
+                    level: 26
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -910,7 +977,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Persian',
-                conditions: [28]
+                conditions: {
+                    level: 28
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -943,7 +1012,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Golduck',
-                conditions: [33]
+                conditions: {
+                    level: 33
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -976,7 +1047,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Primeape',
-                conditions: [57]
+                conditions: {
+                    level: 57
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1009,7 +1082,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Arcanine',
-                conditions: [ItemList.FireStone]
+                conditions: {
+                    item: ItemList.FireStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.25,
@@ -1042,7 +1118,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Poliwhirl',
-                conditions: [25]
+                conditions: {
+                    level: 25
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1062,7 +1140,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Poliwrath',
-                conditions: [ItemList.WaterStone]
+                conditions: {
+                    item: ItemList.WaterStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1095,7 +1176,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Kadabra',
-                conditions: [16]
+                conditions: {
+                    level: 16
+                }
             }
         ],
         'femaleRatio': 0.25,
@@ -1115,7 +1198,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Alakazam',
-                conditions: [ItemList.LinkingCord]
+                conditions: {
+                    item: ItemList.LinkingCord,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.25,
@@ -1148,7 +1234,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Machoke',
-                conditions: [16]
+                conditions: {
+                    level: 16
+                }
             }
         ],
         'femaleRatio': 0.25,
@@ -1168,7 +1256,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Machamp',
-                conditions: [ItemList.LinkingCord]
+                conditions: {
+                    item: ItemList.LinkingCord,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.25,
@@ -1201,7 +1292,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Weepinbell',
-                conditions: [21]
+                conditions: {
+                    level: 21
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1221,7 +1314,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Victreebel',
-                conditions: [ItemList.LeafStone]
+                conditions: {
+                    item: ItemList.LeafStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1254,7 +1350,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Tentacruel',
-                conditions: [30]
+                conditions: {
+                    level: 30
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1287,7 +1385,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Graveler',
-                conditions: [25]
+                conditions: {
+                    'level': 25
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1307,7 +1407,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Golem',
-                conditions: [ItemList.LinkingCord]
+                conditions: {
+                    item: ItemList.LinkingCord,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1340,7 +1443,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Rapidash',
-                conditions: [40]
+                conditions: {
+                    level: 40
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1373,7 +1478,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Slowbro',
-                conditions: [37]
+                conditions: {
+                    level: 37
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1406,7 +1513,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Magneton',
-                conditions: [30]
+                conditions: {
+                    level: 30
+                }
             }
         ],
     },
@@ -1450,7 +1559,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Dodrio',
-                conditions: [31]
+                conditions: {
+                    level: 31
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1483,7 +1594,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Dewgong',
-                conditions: [34]
+                conditions: {
+                    level: 34
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1516,7 +1629,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Muk',
-                conditions: [38]
+                conditions: {
+                    level: 38
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1549,7 +1664,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Cloyster',
-                conditions: [ItemList.WaterStone]
+                conditions: {
+                    item: ItemList.WaterStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1582,7 +1700,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Haunter',
-                conditions: [25]
+                conditions: {
+                    level: 25
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1602,7 +1722,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Gengar',
-                conditions: [ItemList.LinkingCord]
+                conditions: {
+                    item: ItemList.LinkingCord,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1648,7 +1771,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Hypno',
-                conditions: [26]
+                conditions: {
+                    level: 26
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1681,7 +1806,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Kingler',
-                conditions: [28]
+                conditions: {
+                    level: 28
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1714,7 +1841,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Electrode',
-                conditions: [30]
+                conditions: {
+                    level: 30
+                }
             }
         ],
     },
@@ -1745,7 +1874,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Exeggutor',
-                conditions: [ItemList.LeafStone]
+                conditions: {
+                    item: ItemList.LeafStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1778,7 +1910,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Marowak',
-                conditions: [28]
+                conditions: {
+                    level: 28
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1850,7 +1984,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Weezing',
-                conditions: [35]
+                conditions: {
+                    level: 35
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1883,7 +2019,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Rhydon',
-                conditions: [42]
+                conditions: {
+                    level: 42
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1955,7 +2093,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Seadra',
-                conditions: [32]
+                conditions: {
+                    level: 32
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -1988,7 +2128,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Seaking',
-                conditions: [33]
+                conditions: {
+                    level: 33
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -2021,7 +2163,10 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Starmie',
-                conditions: [ItemList.WaterStone]
+                conditions: {
+                    item: ItemList.WaterStone,
+                    numItem: 1
+                }
             }
         ],
     },
@@ -2143,7 +2288,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Gyarados',
-                conditions: [20]
+                conditions: {
+                    level: 20
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -2201,17 +2348,26 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Vaporeon',
-                conditions: [ItemList.WaterStone]
+                conditions: {
+                    item: ItemList.WaterStone,
+                    numItem: 1
+                }
             },
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Jolteon',
-                conditions: [ItemList.ThunderStone]
+                conditions: {
+                    item: ItemList.ThunderStone,
+                    numItem: 1
+                }
             },
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Flareon',
-                conditions: [ItemList.FireStone]
+                conditions: {
+                    item: ItemList.FireStone,
+                    numItem: 1
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -2282,7 +2438,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Omastar',
-                conditions: [40]
+                conditions: {
+                    level: 40
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -2315,7 +2473,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.ItemEvolution,
                 pokemonName: 'Kabutops',
-                conditions: [40]
+                conditions: {
+                    level: 40
+                }
             }
         ],
         'femaleRatio': 0.125,
@@ -2410,7 +2570,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Dragonair',
-                conditions: [30]
+                conditions: {
+                    level: 30
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -2430,7 +2592,9 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.LevelEvolution,
                 pokemonName: 'Dragonite',
-                conditions: [55]
+                conditions: {
+                    level: 55
+                }
             }
         ],
         'femaleRatio': 0.5,
@@ -2488,7 +2652,11 @@ export const pokemonList = createPokemonArray(
             {
                 type: EvolutionType.,
                 pokemonName: '',
-                conditions: []
+                conditions: {
+                    level: xx
+                    item: ItemList.x,
+                    numItem: x
+                }
             }
         ],
         'femaleRatio': 0.5,

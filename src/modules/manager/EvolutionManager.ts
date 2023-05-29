@@ -1,6 +1,7 @@
-import { EvolutionData, PokemonData } from "../Evolution";
+import { EvolutionData } from "../Evolution";
 import Game from "../Game";
 import Pokemon from "../Pokemon";
+import { PokemonData } from "../PokemonList";
 import { getPokemonByName } from "./PokemonManager";
 
 function getEvolvedPokemonByName(name: string): PokemonData {
@@ -8,15 +9,15 @@ function getEvolvedPokemonByName(name: string): PokemonData {
 }
 
 function evolveByLevel(pokemon: Pokemon,evolutionData: EvolutionData): void {
-    if(pokemon.level < evolutionData.conditions[0]) throw new Error('evolveByLevel - condition not met - level too low');
+    if(pokemon.level < evolutionData.conditions['level']) throw new Error('evolveByLevel - condition not met - level too low');
     pokemon.pokemon = getEvolvedPokemonByName(evolutionData.pokemonName);
 }
 
 function evolveByItem(pokemon: Pokemon,evolutionData: EvolutionData, game: Game): void {
-    const oSlot = game.bagpack.slots.find((d) => d.item.name === evolutionData.conditions[0].name);
+    const oSlot = game.bagpack.slots.find((d) => d.item.name === evolutionData.conditions['item'].name);
     if(!oSlot) throw new Error('evolveByLevel - condition not met - no item');
-    if(oSlot.count == 0) throw new Error('evolveByLevel - condition not met - insufficient count');
-    oSlot.count-= 1;
+    if(oSlot.count < evolutionData.conditions['numItem']) throw new Error('evolveByLevel - condition not met - insufficient count');
+    oSlot.count-= (oSlot.count < evolutionData.conditions['numItem']);
     pokemon.pokemon = getEvolvedPokemonByName(evolutionData.pokemonName);
 }
 
@@ -34,14 +35,14 @@ export function evolveManager(game: Game,pokemon: Pokemon,evolutionData: Evoluti
 }
 
 function ifConditionEvolveByLevel(pokemon: Pokemon,evolutionData: EvolutionData): boolean {
-    if(pokemon.level < evolutionData.conditions[0]) return false;
+    if(pokemon.level < evolutionData.conditions['level']) return false;
     return true;
 }
 
 function ifConditionEvolveByItem(evolutionData: EvolutionData, game: Game): boolean {
-    const oSlot = game.bagpack.slots.find((d) => d.item.name === evolutionData.conditions[0].name);
+    const oSlot = game.bagpack.slots.find((d) => d.item.name === evolutionData.conditions['item'].name);
     if(!oSlot) return false;
-    if(oSlot.count == 0) return false;
+    if(oSlot.count < evolutionData.conditions['numItem']) return false;
     return true;
 }
 
