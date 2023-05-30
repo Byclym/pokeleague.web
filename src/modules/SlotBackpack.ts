@@ -11,4 +11,9 @@ export class SlotBackpack {
         this.item = item;
         this.count = count;
     }
+
+    public getCount(): number { return this.count }
+    public getItem(): Item { return this.item }
+    public getItemName(): string { return this.item.name }
+    public use(number: number= 1): void { this.count = this.count - number }
 }

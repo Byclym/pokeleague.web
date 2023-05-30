@@ -50,5 +50,6 @@ export default class Pokemon {
 
     public getName(): string { return this.pokemon.name }
     public getType(): PokemonType[] { return this.pokemon.type }
+    public getCatchRate(): number { return this.pokemon.catchRate }
     public canEvolve(game: Game,evolution: EvolutionData) { return ifConditionEvolveManager(game, this, evolution)}
 }

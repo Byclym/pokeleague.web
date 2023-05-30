@@ -3,6 +3,7 @@ import { Backpack } from "./Backpack";
 import { Plateau, Town } from "./City";
 import { getRandomTrainer } from "./TrainerList";
 import BotTrainer from "./BotTrainer";
+import Pokemon from "./Pokemon";
 
 export default class Game {
     bagpack: Backpack;
@@ -14,6 +15,7 @@ export default class Game {
     towns: Town[];
     weather: string | null;
     challengers: any[];
+    pc: Pokemon[];
 
     
     
@@ -28,6 +30,7 @@ export default class Game {
         this.plateau= plateau;
         this.towns= towns;
         this.challengers= [];
+        this.pc= [];
     }
 
     public nextDay(): void
@@ -94,6 +97,10 @@ export default class Game {
             case 12: return this.player;
             default: return null;
         }
+    }
 
+    public addPokemonToPC(pokemon: Pokemon): void
+    {
+        this.pc.push(pokemon);
     }
 }
