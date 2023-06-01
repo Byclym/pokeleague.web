@@ -14,7 +14,7 @@ function evolveByLevel(pokemon: Pokemon,evolutionData: EvolutionData): void {
 }
 
 function evolveByItem(pokemon: Pokemon,evolutionData: EvolutionData, game: Game): void {
-    const oSlot = game.bagpack.slots.find((d) => d.item.name === evolutionData.conditions['item'].name);
+    const oSlot = game.getBackpack().getSlots().find((d) => d.item.getName() === evolutionData.conditions['item'].name);
     if(!oSlot) throw new Error('evolveByLevel - condition not met - no item');
     if(oSlot.count < evolutionData.conditions['numItem']) throw new Error('evolveByLevel - condition not met - insufficient count');
     oSlot.count-= (oSlot.count < evolutionData.conditions['numItem']);
@@ -40,7 +40,7 @@ function ifConditionEvolveByLevel(pokemon: Pokemon,evolutionData: EvolutionData)
 }
 
 function ifConditionEvolveByItem(evolutionData: EvolutionData, game: Game): boolean {
-    const oSlot = game.bagpack.slots.find((d) => d.item.name === evolutionData.conditions['item'].name);
+    const oSlot = game.getBackpack().getSlots().find((d) => d.item.name === evolutionData.conditions['item'].name);
     if(!oSlot) return false;
     if(oSlot.count < evolutionData.conditions['numItem']) return false;
     return true;

@@ -1,12 +1,12 @@
 <script lang="ts">
 import Pokemon from '../../modules/Pokemon';
-import { getPokemonById, getPokemonByName } from '../../modules/manager/PokemonManager';
+import { getPokemonById } from '../../modules/manager/PokemonManager';
 import { PlayerTrainerType } from '../../modules/TrainerType';
-import Game from '../../modules/Game';
 import PlayerTrainer from '../../modules/PlayerTrainer';
+import { getPlayerTrainerByName } from '../../modules/manager/TrainerManager';
+import Game from '../../modules/Game';
 import { SlotBackpack } from '../../modules/SlotBackpack';
 import { ItemList } from '../../modules/ItemList';
-import { getPlayerTrainerByName } from '../../modules/manager/TrainerManager';
 
     export default {
         data() {
@@ -35,31 +35,14 @@ import { getPlayerTrainerByName } from '../../modules/manager/TrainerManager';
             leaders.push(new PlayerTrainer(getPlayerTrainerByName('Misty')));
             leaders.push(new PlayerTrainer(getPlayerTrainerByName('Brock')));
 
-            const game = new Game(new PlayerTrainer(playerData),leaders,[]);
+            const game = new Game(new PlayerTrainer(playerData),leaders);
+            game.getBackpack().getSlots().push(new SlotBackpack(ItemList.PokeBall, 100));
 
-            game.getBackpack().addItem(ItemList.WaterStone, 1);
-            game.getBackpack().addItem(ItemList.FireStone, 1);
-            game.getBackpack().addItem(ItemList.ThunderStone, 1);
-
-
-            localStorage.setItem('game', JSON.stringify(game));
-
-            const bulbasaur = new Pokemon(getPokemonByName('Bulbasaur'), 20);
-            const eevee1 = new Pokemon(getPokemonByName('Eevee'), 20);
-            const eevee2 = new Pokemon(getPokemonByName('Eevee'), 20);
-            const eevee3 = new Pokemon(getPokemonByName('Eevee'), 20);
             return {
-                game: game,
-                pokemonByLevel: bulbasaur,
-                EeeveToVaporeon: eevee1,
-                EeeveToJolteon: eevee2,
-                EeeveToFlaeron: eevee3
+                game: game
             }
         },
         methods: {
-            evolve(pokemon: Pokemon, idEvolution: Number) {
-                pokemon.evolve(this.game, pokemon.pokemon.evolutions[idEvolution])
-            }
         }
     }
 </script>
@@ -68,16 +51,7 @@ import { getPlayerTrainerByName } from '../../modules/manager/TrainerManager';
     <h1>Evolve Test</h1>
     <div class="container">
         <div class="row">
-            <div class="col-6">
-                <h2>LevelEvolution</h2>
-                <div class="card shadow-sm" @click="evolve(pokemonByLevel, 0)">{{ pokemonByLevel.getName() }}</div>
-            </div>
-            <div class="col-6">
-                <h2>Item Evolution</h2>
-                <div class="card shadow-sm" @click="evolve(EeeveToVaporeon, 0)">{{ EeeveToVaporeon.getName() }}</div>
-                <div class="card shadow-sm" @click="evolve(EeeveToJolteon, 1)">{{ EeeveToJolteon.getName() }}</div>
-                <div class="card shadow-sm" @click="evolve(EeeveToFlaeron, 2)">{{ EeeveToFlaeron.getName() }}</div>
-            </div>
+            <h2>Biome</h2>
         </div>
         <div class="row">
             

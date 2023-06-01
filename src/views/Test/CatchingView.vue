@@ -1,7 +1,7 @@
 <script lang="ts">
 import Game from '../../modules/Game';
 import Catching from '../../modules/Catching';
-import { ItemList } from '../../modules/Item';
+import { ItemList } from '../../modules/ItemList';
 import PlayerTrainer from '../../modules/PlayerTrainer';
 import Pokemon from '../../modules/Pokemon';
 import { SlotBackpack } from '../../modules/SlotBackpack';
@@ -35,13 +35,14 @@ export default {
         leaders.push(new PlayerTrainer(getPlayerTrainerByName('Misty')));
         leaders.push(new PlayerTrainer(getPlayerTrainerByName('Brock')));
 
-        const game = new Game(new PlayerTrainer(playerData),leaders);
-        game.bagpack.slots.push(new SlotBackpack(ItemList.PokeBall, 100));
-        game.bagpack.slots.push(new SlotBackpack(ItemList.GreatBall, 100));
-        game.bagpack.slots.push(new SlotBackpack(ItemList.UltraBall, 100));
+        const game = new Game(new PlayerTrainer(playerData),leaders, []);
+
+        game.getBackpack().addItem(ItemList.PokeBall, 100);
+        game.getBackpack().addItem(ItemList.GreatBall, 100);
+        game.getBackpack().addItem(ItemList.UltraBall, 100);
 
 
-        const target= new Pokemon(getPokemonByName('Mewtwo'), 10);
+        const target= new Pokemon(getPokemonByName('Rattata'), 10);
 
         return {
             target: target,
@@ -53,7 +54,6 @@ export default {
             if(this.target== null) return
             var catching= new Catching(this.game, this.target, ball);
             const result = catching.attempt()
-            console.log(result)
             if(result == true) {
                 this.target = null;
             }
@@ -71,7 +71,7 @@ export default {
             </div>
             
             <div class="col-6">
-                <div v-for="ball in game.bagpack.getBalls()" class="card shadow-sm" @click="sendBall(ball)">{{ ball.getItemName() }} {{ ball.getCount() }}</div>
+                <div v-for="ball in game.getBackpack().getBalls()" class="card shadow-sm" @click="sendBall(ball)">{{ ball.getItemName() }} {{ ball.getCount() }}</div>
             </div>
         </div>
     </div>

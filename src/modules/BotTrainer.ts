@@ -4,11 +4,12 @@ import Pokemon from './Pokemon';
 import { getPokemonByName } from './manager/PokemonManager';
 
 export default class BotTrainer implements TrainerInterface {
-    name: string;
-    pokemons: Pokemon[];
+    private name: string;
+    private pokemons: Pokemon[];
   
-    constructor(trainer: BotTrainerData)
-    {
+    constructor(
+        trainer: BotTrainerData
+    ){
         this.name = trainer.name;
         this.pokemons = [];
 
@@ -24,6 +25,9 @@ export default class BotTrainer implements TrainerInterface {
         );
 
     }
+
+    public getName(): string { return this.name }
+    public getPokemons(): Pokemon[] { return this.pokemons }
 
     public addPokemon(pokemon: Pokemon): void
     {

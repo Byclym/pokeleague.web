@@ -1,5 +1,5 @@
 import { EvolutionData, EvolutionType } from './Evolution';
-import { ItemList } from './Item';
+import { ItemList } from "./ItemList";
 import PokemonType from './PokemonType';
 
 function createPokemonArray<T extends readonly PokemonData[] & Array<{ name: V }>, V extends string>(...args: T) {

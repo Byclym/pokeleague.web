@@ -5,74 +5,39 @@ import { getRandomTrainer } from "./TrainerList";
 import BotTrainer from "./BotTrainer";
 import Pokemon from "./Pokemon";
 
-export default class Game {
-    bagpack: Backpack;
-    day: number;
-    money: number;
-    period: string | null;
-    plateau: Plateau;
-    player: PlayerTrainer;
-    towns: Town[];
-    weather: string | null;
-    challengers: any[];
-    pc: Pokemon[];
-
+export default class Game {    
     
+    constructor(
+        private player: PlayerTrainer,
+        private plateau: Plateau,
+        private towns: Town[],
+        private backpack: Backpack= new Backpack([]),
+        private day: number= 0,
+        private money: number= 1000,
+        private period: string | null= null,
+        private weather: string | null= null,
+        private challengers: any[]= [],
+        private pc: Pokemon[]= [],
+    )
+    {
+    }
+
+    public getBackpack(): Backpack { return this.backpack }
+    public getChallengers(): any[] { return this.challengers }
+    public getDay(): number { return this.day }
+    public getMoney(): number { return this.money }
+    public getPc(): Pokemon[] { return this.pc }
+    public getPeriod(): string | null { return this.period }
+    public getPlateau(): Plateau { return this.plateau }
+    public getPlayer(): PlayerTrainer { return this.player }
+    public getTowns(): Town[] { return this.towns }
+    public getWeather(): string | null { return this.weather }
+
+    public addPokemonToPC(pokemon: Pokemon): void
+    {
+        this.pc.push(pokemon);
+    }
     
-    constructor(player: PlayerTrainer, plateau: Plateau, towns: Town[],)
-    {
-        this.day= 0;
-        this.player= player;
-        this.bagpack= new Backpack();
-        this.money= 1000;
-        this.period= null;
-        this.weather= null;
-        this.plateau= plateau;
-        this.towns= towns;
-        this.challengers= [];
-        this.pc= [];
-    }
-
-    public nextDay(): void
-    {
-        this.day++;
-        this.challengerUp();
-        this.newChallenger();
-    }
-
-    private newChallenger(): void {
-        this.challengers.push({
-            'trainer': getRandomTrainer(),
-            'step': 0,
-            'toFight': true,
-            'undefeated': true,
-        })
-    }
-
-    private challengerUp(): void {
-        this.challengers.forEach(aChallenger => {
-
-            if(aChallenger.undefeated) {
-                aChallenger.step++;
-                aChallenger.toFight = true;
-
-            }
-        });
-    }
-
-    public ifCanNextPhase(): boolean
-    {
-        for(let x= 0; x< 13; x= x+1 ) {
-            if (this.ifChallengerHere(x)) return false;
-        }
-        return true;
-    }
-
-    public ifChallengerHere(level: number): boolean
-    {
-        return this.challengers.some(challenger => challenger.step === level && challenger.toFight === true && challenger.undefeated === true);
-    }
-
     public getChallengerByLevel(level: number): BotTrainer | null
     {
         return this.challengers.find((trainer) => trainer.step == level && trainer.undefeated === true);
@@ -99,8 +64,43 @@ export default class Game {
         }
     }
 
-    public addPokemonToPC(pokemon: Pokemon): void
+    public ifCanNextPhase(): boolean
     {
-        this.pc.push(pokemon);
+        for(let x= 0; x< 13; x= x+1 ) {
+            if (this.ifChallengerHere(x)) return false;
+        }
+        return true;
+    }
+
+    public ifChallengerHere(level: number): boolean
+    {
+        return this.challengers.some(challenger => challenger.step === level && challenger.toFight === true && challenger.undefeated === true);
+    }
+    
+    public nextDay(): void
+    {
+        this.day++;
+        this.challengerUp();
+        this.newChallenger();
+    }
+
+    private challengerUp(): void {
+        this.challengers.forEach(aChallenger => {
+
+            if(aChallenger.undefeated) {
+                aChallenger.step++;
+                aChallenger.toFight = true;
+
+            }
+        });
+    }
+
+    private newChallenger(): void {
+        this.challengers.push({
+            'trainer': getRandomTrainer(),
+            'step': 0,
+            'toFight': true,
+            'undefeated': true,
+        })
     }
 }

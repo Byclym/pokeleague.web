@@ -3,19 +3,18 @@ import Pokemon from "./Pokemon";
 import { SlotBackpack } from "./SlotBackpack";
 
 export default class Catching {
-    game: Game;
-    target: Pokemon;
-    ball: SlotBackpack;
 
     constructor(
-        game: Game,
-        target: Pokemon,
-        ball: SlotBackpack,
+        private game: Game,
+        private target: Pokemon,
+        private ball: SlotBackpack,
     ){
-        this.game = game;
-        this.target = target;
-        this.ball = ball;
     }
+    
+    public getGame (): Game { return this.game }
+    public getTarget (): Pokemon { return this.target }
+    public getBall (): SlotBackpack { return this.ball }
+
 
     public attempt(): boolean
     {
@@ -23,13 +22,6 @@ export default class Catching {
         const result= this.getResult();
         if(result) this.game.addPokemonToPC(this.target);
         return result;
-    }
-
-    private getResult(): boolean
-    {
-        var catchRating= this.getCatchRating();
-        if (catchRating > 100) return true;
-        return Math.floor(Math.random() * 101) < catchRating? true: false;
     }
 
     private getCatchRating(): number {
@@ -64,5 +56,12 @@ export default class Catching {
         var formula= formula*L*S*D;
 
         return formula
+    }
+
+    private getResult(): boolean
+    {
+        var catchRating= this.getCatchRating();
+        if (catchRating > 100) return true;
+        return Math.floor(Math.random() * 101) < catchRating? true: false;
     }
 }
